@@ -10,7 +10,8 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      # - run: docker-compose -f php/docker-compose.yml build
+      - run: pwd echo ~
+      
 dependencies:
   cache_directories:
     - "~/deps"
