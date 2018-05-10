@@ -12,6 +12,7 @@ jobs:
       - checkout
       - run: pwd 
       - run: echo ~
+      - run: ls -lah ~
       
 dependencies:
   cache_directories:
