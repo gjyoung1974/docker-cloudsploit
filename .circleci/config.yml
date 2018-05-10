@@ -1,3 +1,11 @@
+version: 2
+executorType: machine
+jobs:
+  build:
+    working_directory: ~/vault-examples
+    docker:
+    environment:
+      SOME_CRAZY_VARIABLE: w00t
 # https://circleci.com/docs/docker
 machine:
   environment:
