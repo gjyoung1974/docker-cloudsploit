@@ -2,7 +2,7 @@ version: 2
 executorType: machine
 jobs:
   build:
-    working_directory: ~/vault-examples
+    working_directory: ~/docker-cloudsploit
     docker:
     environment:
       BATS_VER: 0.4.0
