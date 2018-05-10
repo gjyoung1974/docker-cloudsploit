@@ -10,7 +10,8 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: pwd echo ~
+      - run: pwd 
+      - run: echo ~
       
 dependencies:
   cache_directories:
