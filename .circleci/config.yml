@@ -8,7 +8,9 @@ jobs:
       BATS_VER: 0.4.0
     machine:
       image: circleci/classic:edge
-      
+    steps:
+      - checkout
+      # - run: docker-compose -f php/docker-compose.yml build
 dependencies:
   cache_directories:
     - "~/deps"
