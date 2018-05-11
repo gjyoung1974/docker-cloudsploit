@@ -23,7 +23,7 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: las -lah
+      - run: ls -lah
 
 test:
   override:
