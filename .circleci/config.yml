@@ -18,10 +18,7 @@ jobs:
     steps:
       - checkout
       - run: git submodule update --init --recursive
-      - run: ls -lah
-      - run: docker info
-      - run: docker version
-      - run: ss -tulpn
+      - run: ls -lah ~/docker-cloudsploit
       - run: script/build
 
 #test:
