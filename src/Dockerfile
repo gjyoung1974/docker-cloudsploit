@@ -1,6 +1,7 @@
 FROM alpine:3.3
 
 COPY . /
+ADD . /scans
 
 RUN apk add --no-cache nodejs && \
     adduser -D user && \
