@@ -17,9 +17,8 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - git submodule sync
-      - git submodule update --init
-      - run: git submodule update --init --recursive
+      - run: git submodule sync
+      - run: git submodule update --init
       - run: ls -lah ./src
       - run: script/build
 
