@@ -1,3 +1,0 @@
-[submodule "src/scans"]
-	path = ~src/scans
-	url = https://github.com/cloudsploit/scans.git
