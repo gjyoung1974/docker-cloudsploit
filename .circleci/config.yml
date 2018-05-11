@@ -18,15 +18,14 @@ jobs:
     steps:
       - checkout
       - run: ls -lah
-    override:
-      - docker info
-      - docker version
-      - ss -tulpn
-      - script/build
+      - run docker info
+      - run docker version
+      - run ss -tulpn
+      - run script/build
 
-test:
-  override:
-    - script/test
+#test:
+#  override:
+#    - script/test
 
 # https://circleci.com/docs/configuration#deployment
 # https://circleci.com/docs/environment-variables
