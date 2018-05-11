@@ -11,7 +11,7 @@ git submodule update --init
 git submodule foreach git reset --hard
 
 say Patch upstream source.
-patch -p1 /home/circleci/project/src/scans/index.js < /home/circleci/project/src/index.js.patch
+patch -p1 /home/circleci/project/src/index.js < /home/circleci/project/src/index.js.patch
 
 say Build Docker image.
 docker build --rm -t cloudsploit /home/circleci/project/src
