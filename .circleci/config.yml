@@ -20,11 +20,6 @@ jobs:
       - run: git clone https://github.com/cloudsploit/scans.git /home/circleci/project/cloudsploit
       - run: cp -R /home/circleci/project/cloudsploit/* /home/circleci/project/src/.
       - run: script/build
+      - run: docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker push gjyoung1974/cloudsploit:latest
       
-deployment:
-  hub:
-    branch: master
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push gjyoung1974/cloudsploit:latest
-
