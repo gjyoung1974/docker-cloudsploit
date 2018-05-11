@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run: git clone https://github.com/cloudsploit/scans.git ~/cloudsploit
       # - run: cp -R ~/cloudsploit/* ~/src/.
-      - run: ls -lah ~/src
+      - run: ls -lah /home/circleci/project
       - run: script/build
 
 #test:
