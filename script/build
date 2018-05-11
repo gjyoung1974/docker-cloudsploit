@@ -15,6 +15,7 @@ Echo Patch upstream source.
 
 Echo Build Docker image.
 docker build --rm -t cloudsploit /home/circleci/project/src
+docker tag ${IMAGE} gjyoung1974/cloudsploit:latest
 
 Echo Clean upstream source.
 git submodule foreach git reset --hard
