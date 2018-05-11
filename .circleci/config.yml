@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout
       - run: git submodule update --init --recursive
-      - run: ls -lah .
+      - run: ls -lah ./src
       - run: script/build
 
 #test:
