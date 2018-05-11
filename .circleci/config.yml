@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run: git clone https://github.com/cloudsploit/scans.git ~/src
       - run: ls -R -lah ~/src
-      - run: ~/script/build
+      - run: script/build
 
 #test:
 #  override:
