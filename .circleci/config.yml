@@ -17,7 +17,7 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: https://github.com/cloudsploit/scans.git ~/src
+      - run: git clone https://github.com/cloudsploit/scans.git ~/src
       - run: ls -R -lah ~
       - run: script/build
 
