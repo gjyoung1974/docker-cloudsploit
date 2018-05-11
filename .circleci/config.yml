@@ -17,6 +17,7 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
+      - run: git submodule update --init --recursive
       - run: ls -lah
       - run: docker info
       - run: docker version
