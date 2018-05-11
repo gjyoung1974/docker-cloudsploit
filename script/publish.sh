@@ -17,7 +17,7 @@ for tag in ${tags}; do
   docker images | grep ${IMAGE}
 
   # Create a new tag.
-  tagged_name="jumanjiman/${IMAGE}:${tag}"
+  tagged_name="gjyoung1974/${IMAGE}:${tag}"
   docker tag ${IMAGE} ${tagged_name}
 
   # Ensure the tagged image exists.
