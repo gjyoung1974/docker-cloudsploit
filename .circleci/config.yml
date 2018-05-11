@@ -9,6 +9,7 @@ dependencies:
     - sudo bats-${BATS_VER}/install.sh /usr/local
 jobs:
   build:
+  context: docker
     # working_directory: ~/docker-cloudsploit
     docker:
     environment:
