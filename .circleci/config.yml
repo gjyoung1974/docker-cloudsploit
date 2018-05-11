@@ -17,10 +17,10 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: git clone https://github.com/cloudsploit/scans.git $working_directory/cloudsploit
+      - run: git clone https://github.com/cloudsploit/scans.git ~/cloudsploit
       - run: cp -R $working_directory/cloudsploit/* ~/src/.
-      - run: ls -R -lah ${working_directory}/src
-      - run: script/build
+      - run: ls -R -lah ~/src
+      - run: ~/script/build
 
 #test:
 #  override:
