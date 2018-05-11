@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run: git submodule sync
       - run: git submodule update --init
-      - run: ls -r -lah ~
+      - run: ls -R -lah ~
       - run: script/build
 
 #test:
