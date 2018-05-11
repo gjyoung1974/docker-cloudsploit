@@ -9,7 +9,7 @@ dependencies:
     - sudo bats-${BATS_VER}/install.sh /usr/local
 jobs:
   build:
-    # working_directory: ~/docker-cloudsploit
+    working_directory: ~/docker-cloudsploit
     docker:
     environment:
       BATS_VER: 0.4.0
@@ -17,8 +17,8 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: git clone https://github.com/cloudsploit/scans.git ~/src
-      - run: ls -R -lah ~
+      - run: git clone https://github.com/cloudsploit/scans.git ${working_directory}/src
+      - run: ls -R -lah ${working_directory}/src
       - run: script/build
 
 #test:
