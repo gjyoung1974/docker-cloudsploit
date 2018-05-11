@@ -8,19 +8,19 @@ dependencies:
     - tar -xf ~/deps/bats_v${BATS_VER}.tar.gz
     - sudo bats-${BATS_VER}/install.sh /usr/local
 jobs:
-  build:
-  context: docker
-    # working_directory: ~/docker-cloudsploit
-    docker:
-    environment:
-      BATS_VER: 0.4.0
-    machine:
-      image: circleci/classic:edge
-    steps:
-      - checkout
-      - run: git clone https://github.com/cloudsploit/scans.git /home/circleci/project/cloudsploit
-      - run: cp -R /home/circleci/project/cloudsploit/* /home/circleci/project/src/.
-      - run: script/build
-      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run: docker push gjyoung1974/cloudsploit:latest
-      
+    - build:
+      context: docker
+        # working_directory: ~/docker-cloudsploit
+        docker:
+        environment:
+          BATS_VER: 0.4.0
+        machine:
+          image: circleci/classic:edge
+        steps:
+          - checkout
+          - run: git clone https://github.com/cloudsploit/scans.git /home/circleci/project/cloudsploit
+          - run: cp -R /home/circleci/project/cloudsploit/* /home/circleci/project/src/.
+          - run: script/build
+          - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+          - run: docker push gjyoung1974/cloudsploit:latest
+
