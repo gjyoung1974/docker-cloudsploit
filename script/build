@@ -1,23 +1,23 @@
 #!/bin/sh
 set -e
 
-say() {
+Echo() {
   echo
   echo '====>' $@
 }
 
-say Fetch upstream source.
+Echo Fetch upstream source.
 git submodule update --init
 git submodule foreach git reset --hard
 
-say Patch upstream source.
+Echo Patch upstream source.
 # patch -p1 /home/circleci/project/src/index.js < /home/circleci/project/src/index.js.patch
 
-say Build Docker image.
+Echo Build Docker image.
 docker build --rm -t cloudsploit /home/circleci/project/src
 
-say Clean upstream source.
+Echo Clean upstream source.
 git submodule foreach git reset --hard
 
-say Image Size
+Echo Image Size
 docker images | egrep -i '(size|cloudsploit)'
