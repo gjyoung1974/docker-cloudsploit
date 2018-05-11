@@ -1,19 +1,5 @@
 version: 2
 executorType: machine
-jobs:
-  build:
-    working_directory: ~/docker-cloudsploit
-    docker:
-    environment:
-      BATS_VER: 0.4.0
-    machine:
-      image: circleci/classic:edge
-    steps:
-      - checkout
-      - run: pwd 
-      - run: echo ~
-      - run: ls -lah ~
-      
 dependencies:
   cache_directories:
     - "~/deps"
@@ -26,6 +12,18 @@ dependencies:
     - docker version
     - ss -tulpn
     - script/build
+
+jobs:
+  build:
+    working_directory: ~/docker-cloudsploit
+    docker:
+    environment:
+      BATS_VER: 0.4.0
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      - run: pwd
 
 test:
   override:
