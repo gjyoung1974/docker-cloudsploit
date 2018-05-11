@@ -20,6 +20,5 @@ jobs:
         - run: git clone https://github.com/cloudsploit/scans.git /home/circleci/project/cloudsploit
         - run: cp -R /home/circleci/project/cloudsploit/* /home/circleci/project/src/.
         - run: script/build
-        - run: docker login -u="verygoodsecurity+buildzit" -p="OEJ5432QB1KSN6KY7DDZK1E4FEKIVDGN4MY22XVASAMMEHIOL36L1VHFCTMOPZLU" quay.io
-        - run: docker push quay.io/verygoodsecurity/cloudsploit:latest
-
+        - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+        - run: docker push gjyoung1974/cloudsploit:latest
