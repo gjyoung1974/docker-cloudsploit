@@ -17,8 +17,7 @@ jobs:
       image: circleci/classic:edge
     steps:
       - checkout
-      - run: git submodule sync
-      - run: git submodule update --init
+      - run: https://github.com/cloudsploit/scans.git ~/src
       - run: ls -R -lah ~
       - run: script/build
 
