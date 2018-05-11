@@ -21,25 +21,10 @@ jobs:
       - run: cp -R /home/circleci/project/cloudsploit/* /home/circleci/project/src/.
       - run: ls -lah /home/circleci/project/src
       - run: script/build
+  deployment:
+    hub:
+      branch: master
+      commands:
+        - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+        - docker push gjyoung1974/cloudsploit
 
-#test:
-#  override:
-#    - script/test
-
-# https://circleci.com/docs/configuration#deployment
-# https://circleci.com/docs/environment-variables
-#deployment:
-#  master:
-#    branch: master
-#    owner: gjyoung1974
-#    commands:
-#      # Publish official images with both a specific tag and "latest".
-#      - script/publish.sh latest $(date +%Y%m%dT%H%M)-git-${CIRCLE_SHA1:0:7}
-     
-deployment:
-  hub:
-    branch: master
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push gjyoung1974/cloudsploit
-      
