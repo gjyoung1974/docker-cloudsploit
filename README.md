@@ -15,7 +15,7 @@ Run this like:
 Either:
 
 ```
-$ docker run -e scan_username=${scan_username} -e scan_password=${scan_password} quay.io/verygoodsecurity/cloudsploit
+$ docker run -e scan_username=${scan_username} -e scan_password=${scan_password} {path-to-your-image}/cloudsploit:latest
 ```
 username and password are AWS KeyID and Secret key for the service account IAM user
 
