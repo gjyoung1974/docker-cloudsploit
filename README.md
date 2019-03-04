@@ -1,5 +1,5 @@
 # docker-cloudsploit
-dockerized-cloudsplot, CloudSploit is a security and configuration scanner that can detect hundreds of threats in your AWS account. Don't let a single misstep compromise your entire infrastructure.     
+_*What is this?*_ Dockerized CloudSploit/Scan. CloudSploit is a security and configuration scanner that can detect hundreds of threats in your AWS account. Don't let a single misstep compromise your entire infrastructure.     
 
 Cloudsploit is an AWS Account monitoring solution
 
