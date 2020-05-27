@@ -1,13 +1,20 @@
-FROM alpine:3.3
+FROM alpine:latest
 
-COPY . /
-ADD . /scans
+COPY . /home/user
+ADD . /home/user
 
-RUN apk add --no-cache nodejs && \
+ENV accessKeyId=AWS_ACCESS_KEY_ID
+ENV secretAccessKey=AWS_SECRET_ACCESS_KEY
+ENV sessionToken=AWS_SESSION_TOKEN
+ENV region=AWS_DEFAULT_REGION
+
+RUN apk add --no-cache nodejs npm && \
     adduser -D user && \
-    npm install -g proxy-agent && \
-    cd /scans && \
-    npm install -g
+    npm install -g proxy-agent \
+    cd /home/user/cloudsploit && \
+    npm install -g /home/user/cloudsploit
 
 USER user
-ENTRYPOINT ["node", "/usr/lib/node_modules/cloudsploit"]
+
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["node", "/home/user/cloudsploit/index.js", "--csv=/tmp/out.csv"]
